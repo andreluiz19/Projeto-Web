@@ -150,7 +150,7 @@ h1 {
   width: 120px;
 }
 
-p {
+p{
   color: white;
   font-style: normal;
   font-size: 15px;
@@ -160,6 +160,12 @@ p {
   cursor: default;
 }
 
-#login{
+#login {
   display: none;
+
+}
+
+.loginTela{
+  height: 100px;
+  width: 50px;
 }
