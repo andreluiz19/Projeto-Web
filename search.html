@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Index</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="search.css" />
+    <link rel="stylesheet" href="fonts.css" />
+  </head>
+  <body>
+    <div class="search">
+      <input type="text" name="busca" value="" />
+      <button><img src="images/lupa.svg" /></button>
+    </div>
+    <ul></ul>
+
+    <header>
+      <div class="menu">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.svg" /></a>
+        </div>
+        <div>
+          <ul class="menu-items">
+            <a href="index.html">Início</a>
+            <a href="#">Loja</a>
+            <a href="#">Canais</a>
+            <a href="#">Categorias</a>
+            <a href="#">Minha área</a>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <script type="text/javascript" charset="utf-8">
+      var container = document.querySelector('ul')
+      container.classList.add('card')
+      document.querySelector('button').addEventListener('click', function () {
+        container.innerText = ''
+        var query = document.querySelector('input').value
+        axios
+        .get('https://api.tvmaze.com/search/shows?q=' + query)
+        .then(function (res) {
+          var data = res.data
+          for (var i = 0; data.length && i < 15; i++) {
+            if (data[i] && data[i].show) {
+              var li = document.createElement('li')
+              var card = document.createElement('div')
+              var title = document.createElement('p')
+              var genres = document.createElement('p')
+              var cardImage = document.createElement('img')
+              cardImage.src = data[i]?.show.image.medium
+              title.innerHTML = data[i]?.show.name
+              genres.innerHTML = data[i]?.show.genres
+              title.classList.add('title')
+              genres.classList.add('genres')
+              li.appendChild(card)
+              card.appendChild(title)
+              card.appendChild(cardImage)
+              card.appendChild(genres)
+              container.appendChild(li)
+              }
+            }
+          })
+      })
+    </script>
+  </body>
+</html>
