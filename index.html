@@ -14,6 +14,7 @@
     <link rel="stylesheet" media="screen and (min-width: 1366px)" href="res4.css"/>
     <link rel="stylesheet" media="screen and (min-width: 1440px)" href="res3.css"/>
     <link rel="stylesheet" media="screen and (min-width: 1920px)" href="res1.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Bem-vindo(a) ao Prime Video</title>
     <!--
       TESTE123
@@ -69,13 +70,13 @@
     </div>
     <form id="formLogin">
       <h3 class="label">Fazer login</h1>
-      <input class="campos" type="text" name="email" placeholder="Digite seu email..." />
+      <input id="user" class="campos" type="text" name="email" placeholder="Digite seu email..." />
       <br>
-      <input class="campos" type="password" name="senha" placeholder="Digite sua senha..." />
+      <input id="senha" class="campos" type="password" name="senha" placeholder="Digite sua senha..." />
       <br>
       <input id="entrar" type="submit" name="acao" value="Entrar" />
-      <input id="fechar" type="submit" name="acao2" value="Fechar" />
-  </form>
+      <input id="fechar" type="button" name="acao2" value="Fechar" />
+    </form>
     <script type="text/javascript" src="/Projeto-Web/login.js"></script>
   </body>
 </html>
