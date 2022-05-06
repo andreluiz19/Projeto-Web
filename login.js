@@ -1,6 +1,7 @@
 let bt = document.getElementById('Logar');
 let form = document.getElementById('formLogin');
 
+
 bt.addEventListener("click", fnEntrar);
 
 function fnEntrar(){
@@ -18,6 +19,12 @@ function fnFechar(){
 let formu = document.getElementById('formLogin');
 let email = document.getElementById('user');
 let senha = document.getElementById('senha');
+let tk = localStorage.getItem('token');
+let iconeBusca = document.getElementById('idBusca');
+
+if(tk){
+    iconeBusca.style.display = 'block';
+}
 
 formu.addEventListener('submit', function(e) {
     axios.post('https://reqres.in/api/login', {
@@ -25,10 +32,29 @@ formu.addEventListener('submit', function(e) {
         password: senha.value
     })
     .then(function (response) {
-    console.log(response);
+        //console.log(response.data.token);
+        localStorage.setItem('token', response.data.token);
+        form.style.display = 'none';
+        iconeBusca.style.display = 'block';
     })
     e.preventDefault();
 });
+
+//localStorage.clear();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -39,7 +65,7 @@ let parametros = { method: 'POST' , body:  credenciais};
 
 fetch('https://reqres.in/api/login', parametros)
 .then(response => response.json())
-.then(json =>{
+.then(json =>{d
     console.log(json.data);
 })
 */
