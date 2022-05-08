@@ -21,11 +21,37 @@ let email = document.getElementById('user');
 let senha = document.getElementById('senha');
 let tk = localStorage.getItem('token');
 let iconeBusca = document.getElementById('idBusca');
+let btEntrar = document.getElementById('entrar');
 
 if(tk){
     iconeBusca.style.display = 'block';
 }
 
+btEntrar.addEventListener("click", fnValidar);
+function fnValidar(e){
+    let contE = email.value.length;
+    let contS = senha.value.length;
+    if(contE < 3 || contS < 3){
+        alert("E-mail ou senha com pouco caracteres.");
+        email.value = "";
+        senha.value = "";
+    }else{
+        formu.addEventListener('submit', function(e) {
+            axios.post('https://reqres.in/api/login', {
+                email: email.value,
+                password: senha.value
+            })
+            .then(function (response) {
+                //console.log(response.data.token);
+                localStorage.setItem('token', response.data.token);
+                form.style.display = 'none';
+                iconeBusca.style.display = 'block';
+            })
+            e.preventDefault();
+        });
+    }
+}
+/*
 formu.addEventListener('submit', function(e) {
     axios.post('https://reqres.in/api/login', {
         email: email.value,
@@ -39,7 +65,7 @@ formu.addEventListener('submit', function(e) {
     })
     e.preventDefault();
 });
-
+*/
 //localStorage.clear();
 
 
