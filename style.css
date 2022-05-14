@@ -355,7 +355,7 @@ p{
   font-family: 'amazonemberlight', arial;
 }
 
-.search{
+#buscar{
   display: flex;
   flex-direction: column;
   align-items: center;
