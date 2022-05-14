@@ -76,19 +76,3 @@ function fnValidar(){
         e.preventDefault();
     });
 }
-
-/*
-btEntrar.addEventListener("click", fnEntrarLogin);
-btT.addEventListener("click", fnFecharLogin);
-btF.addEventListener("click", fnFecharLogin);
-
-function fnEntrarLoginF(){
-    //msgLoginT.style.display = 'block';
-    msgLoginF.style.display = 'block';
-}
-function fnFecharLogin(e){
-    msgLoginT.style.display = 'none';
-    //msgLoginF.style.display = 'none';
-    e.preventDefault();
-}
-*/
