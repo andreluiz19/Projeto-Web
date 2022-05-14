@@ -22,95 +22,73 @@ let senha = document.getElementById('senha');
 let tk = localStorage.getItem('token');
 let iconeBusca = document.getElementById('idBusca');
 let btEntrar = document.getElementById('entrar');
-let telaSearch = document.getElementById('telaBusca');
+
+let btT = document.getElementById('btMsgT');
+let msgLoginT = document.getElementById('msgLoginTrue');
+
+let msgLoginF = document.getElementById('msgLoginFalse');
+let btF = document.getElementById('btMsgF');
 
 if(tk){
     iconeBusca.style.display = 'block';
-    //telaSearch.style.display = 'block';
 }
 
 btEntrar.addEventListener("click", fnValidar);
-function fnValidar(e){
+function fnValidar(){
     let contE = email.value.length;
     let contS = senha.value.length;
     if(contE < 3 || contS < 3){
-        
         email.value = "";
         senha.value = "";
-    }else{
-        formu.addEventListener('submit', function(e) {
-            axios.post('https://reqres.in/api/login', {
-                email: email.value,
-                password: senha.value
-            })
-            .then(function (response) {
-                //console.log(response.data.token);
-                localStorage.setItem('token', response.data.token);
-                form.style.display = 'none';
-                iconeBusca.style.display = 'block';
-            })
-            telaSearch.style.display = 'block';
+        msgLoginF.style.display = 'block';
+        btF.addEventListener("click", function(e){
+            msgLoginF.style.display = 'none';
             e.preventDefault();
-        });
+        })
     }
+    formu.addEventListener('submit', function(e) {
+        axios.post('https://reqres.in/api/login', {
+            email: email.value,
+            password: senha.value
+        })
+        .then(function (response) {
+            //console.log(response.data.token);
+            localStorage.setItem('token', response.data.token);
+            form.style.display = 'none';
+            iconeBusca.style.display = 'block';
+            email.value = "";
+            senha.value = "";
+            msgLoginT.style.display = 'block';
+            btT.addEventListener("click", function(e){
+                msgLoginT.style.display = 'none';
+                e.preventDefault();
+            })
+        })
+        .catch(function(err){
+            email.value = "";
+            senha.value = "";
+            msgLoginF.style.display = 'block';
+            btF.addEventListener("click", function(e){
+                msgLoginF.style.display = 'none';
+                e.preventDefault();
+            })
+        })
+        e.preventDefault();
+    });
 }
+
 /*
-formu.addEventListener('submit', function(e) {
-    axios.post('https://reqres.in/api/login', {
-        email: email.value,
-        password: senha.value
-    })
-    .then(function (response) {
-        //console.log(response.data.token);
-        localStorage.setItem('token', response.data.token);
-        form.style.display = 'none';
-        iconeBusca.style.display = 'block';
-    })
+btEntrar.addEventListener("click", fnEntrarLogin);
+btT.addEventListener("click", fnFecharLogin);
+btF.addEventListener("click", fnFecharLogin);
+
+function fnEntrarLoginF(){
+    //msgLoginT.style.display = 'block';
+    msgLoginF.style.display = 'block';
+}
+function fnFecharLogin(e){
+    msgLoginT.style.display = 'none';
+    //msgLoginF.style.display = 'none';
     e.preventDefault();
-});
-*/
-//localStorage.clear();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-let email = document.getElementById('user');
-let password = document.getElementById('senha');
-let credenciais = {email, password};
-let parametros = { method: 'POST' , body:  credenciais};
-
-fetch('https://reqres.in/api/login', parametros)
-.then(response => response.json())
-.then(json =>{d
-    console.log(json.data);
-})
-*/
-
-
-
-
-
-/*
-let http = new XMLHttpRequest();
-http.open('POST', 'https://reqres.in/api/login', true);
-console.log(json.data);
-
-
-function validaLogin(){
-    http.open('POST', 'https://reqres.in/api/login', true);
-    console.log(json.data);
 }
 */

@@ -237,30 +237,68 @@ p{
   font-weight: 600;
 }
 
-#loginTrue{
-  background-color: #B1EB70;
-  max-width: 350px;
+#msgLoginTrue{
+  background-color: #ccc;
+  max-width: 400px;
   width: 70%;
-  padding: 4px;
+  padding: 20px;
   position: absolute;
   left: 50%;
-  top: 20%;
-  transform: translate(-50%,-20%);
-  border: 4px solid green;
-  border-radius: 10px;
+  top: 40%;
+  transform: translate(-50%,-50%);
+  border: 4px solid #ccc;
   display: none;
 }
 
-#loginFalse{
-  background-color: #FB7068;
-  max-width: 350px;
+#msgLoginFalse{
+  background-color: #ccc;
+  max-width: 400px;
   width: 70%;
-  padding: 4px;
+  padding: 20px;
   position: absolute;
   left: 50%;
-  top: 20%;
-  transform: translate(-50%,-20%);
-  border: 4px solid red;
-  border-radius: 10px;
+  top: 40%;
+  transform: translate(-50%,-50%);
+  border: 4px solid #ccc;
   display: none;
+}
+
+.msgLabelT{
+  font-family: Arial;
+  font-weight: 300;
+  font-size: 26px;
+}
+
+.msgLabelF{
+  font-family: Arial;
+  font-weight: 300;
+  font-size: 26px;
+}
+
+#btMsgT{
+  width: 100%;
+  height: 30px;
+  cursor: pointer;
+  background: rgb(33, 57, 80);
+  color: white;
+  border: 0;
+  border-radius: 2px;
+  margin-top: 10px;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#btMsgF{
+  width: 100%;
+  height: 30px;
+  cursor: pointer;
+  background: rgb(33, 57, 80);
+  color: white;
+  border: 0;
+  border-radius: 2px;
+  margin-top: 10px;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 600;
 }
