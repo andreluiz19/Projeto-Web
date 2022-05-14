@@ -80,7 +80,7 @@ header {
   align-items: center;
 }
 
-.busca {
+#idBusca {
   margin-left: 535px;
   margin-top: -55px;
   display: flex;
@@ -89,7 +89,7 @@ header {
 
 .globo {
   margin-left: 575px;
-  margin-top: -58px;
+  margin-top: -30px;
   display: flex;
   align-items: center;
 }

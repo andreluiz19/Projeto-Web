@@ -80,7 +80,7 @@ header {
   align-items: center;
 }
 
-.busca {
+#idBusca {
   margin-left: 318px;
   margin-top: -50px;
   display: flex;
@@ -88,15 +88,15 @@ header {
 }
 
 .globo {
-  margin-left: 1720px;
-  margin-top: -50px;
+  margin-left: 350px;
+  margin-top: -30px;
   display: flex;
   align-items: center;
 }
 
 .idioma {
-  margin-left: 1750px;
-  margin-top: -21px;
+  margin-left: 380px;
+  margin-top: -22px;
   display: flex;
   font-size: 16px;
   font-family: 'amazonemberlight', arial;
@@ -108,7 +108,7 @@ header {
 .user {
   margin-left: 358px;
   margin-top: -25px;
-  display: flex;
+  display: none;
   align-items: center;
 }
 

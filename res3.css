@@ -62,7 +62,7 @@ header {
     padding-left: 26px;
 }
 
-.busca {
+#idBusca {
     margin-left: 1225px;
     margin-top: -30px;
     display: flex;
