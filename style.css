@@ -216,6 +216,13 @@ p{
   display: none;
 }
 
+#telaBusca{
+  display: none;
+  width: 100px;
+  height: 100px;
+  background: white;
+}
+
 #fechar{
   width: 100%;
   height: 30px;

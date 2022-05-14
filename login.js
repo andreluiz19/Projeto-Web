@@ -22,9 +22,11 @@ let senha = document.getElementById('senha');
 let tk = localStorage.getItem('token');
 let iconeBusca = document.getElementById('idBusca');
 let btEntrar = document.getElementById('entrar');
+let telaSearch = document.getElementById('telaBusca');
 
 if(tk){
     iconeBusca.style.display = 'block';
+    //telaSearch.style.display = 'block';
 }
 
 btEntrar.addEventListener("click", fnValidar);
@@ -32,7 +34,7 @@ function fnValidar(e){
     let contE = email.value.length;
     let contS = senha.value.length;
     if(contE < 3 || contS < 3){
-        alert("E-mail ou senha com pouco caracteres.");
+        
         email.value = "";
         senha.value = "";
     }else{
@@ -47,6 +49,7 @@ function fnValidar(e){
                 form.style.display = 'none';
                 iconeBusca.style.display = 'block';
             })
+            telaSearch.style.display = 'block';
             e.preventDefault();
         });
     }
